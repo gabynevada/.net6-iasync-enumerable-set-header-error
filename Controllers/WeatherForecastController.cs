@@ -14,7 +14,7 @@ public class WeatherForecastController(IDataService dataService) : ControllerBas
     public async IAsyncEnumerable<WeatherForecastData> GetLocal([EnumeratorCancellation] CancellationToken cancellationToken)
     {
         var results = await dataService.GetData();
-        // Adding a response header after the calls errors out
+        // Adding a response header before yielding first result errors out
         Response.Headers.Add("Test", results.Name);
         await foreach (var result in results.Data.WithCancellation(cancellationToken))
         {
