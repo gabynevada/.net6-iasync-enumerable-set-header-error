@@ -10,21 +10,9 @@ public class DataService : IDataService
     {
         var testData = new List<WeatherForecastData>
         {
-            new()
-            {
-                Name = "Freezing",
-                Total = 100
-            },
-            new()
-            {
-                Name = "Freezing",
-                Total = 100
-            },
-            new()
-            {
-                Name = "Freezing",
-                Total = 100
-            }
+            new() { Name = "Freezing", Total = 100 },
+            new() { Name = "Freezing", Total = 100 },
+            new() { Name = "Freezing", Total = 100 }
         };
         return new WeatherForecast
         {
